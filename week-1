@@ -1,0 +1,1065 @@
+Basic Data Structures:
+Arrays and Linked Lists
+Neil Rhodes
+Department of Computer Science and Engineering
+University of California, San Diego
+Data Structures
+http://bit.ly/algospecialization
+Outline
+long arr[5];
+long arr[] = new long[5];
+arr = [None] * 5
+1 5 17 3 25 1 5 17 3 25
+8 2 36 5 3
+Definition
+Array:
+Contiguous area of memory
+consisting of
+equal-size elements indexed by contiguous
+integers.
+Definition
+Array:
+Contiguous area of memory consisting of
+equal-size elements
+indexed by contiguous
+integers.
+Definition
+Array:
+Contiguous area of memory consisting of
+equal-size elements indexed by contiguous
+integers.
+1 2 3 4 5 6 7
+What’s Special About Arrays?
+Constant-time access
+array_addr + elem_size × (i − first_index)
+1 2 3 4 5 6 7
+What’s Special About Arrays?
+Constant-time access
+array_addr + elem_size × (i − first_index)
+1 2 3 4 5 6 7
+What’s Special About Arrays?
+Constant-time access
+array_addr
++ elem_size × (i − first_index)
+1 2 3 4 5 6 7
+What’s Special About Arrays?
+Constant-time access
+array_addr + elem_size × (
+i − first_index
+)
+1 2 3 4 5 6 7
+What’s Special About Arrays?
+Constant-time access
+array_addr + elem_size × (i − first_index)
+1 2 3 4 5 6 7
+Multi-Dimensional Arrays
+(1, 1)
+(3,4)
+array_addr +
+elem_size × ((3 − 1) × 6 + (4 − 1))
+Multi-Dimensional Arrays
+(1, 1)
+(3,4)
+array_addr +
+elem_size × ((3 − 1) × 6 + (4 − 1))
+Multi-Dimensional Arrays
+(1, 1)
+(3,4)
+array_addr +
+elem_size × ((3 − 1) × 6 + (4 − 1))
+Multi-Dimensional Arrays
+(1, 1)
+(3,4)
+array_addr +
+elem_size × (
+(3 − 1) × 6
++ (4 − 1))
+Multi-Dimensional Arrays
+(1, 1)
+(3,4)
+array_addr +
+elem_size × (
+(3 − 1) × 6 + (4 − 1)
+)
+Multi-Dimensional Arrays
+(1, 1)
+(3,4)
+array_addr +
+elem_size × ((3 − 1) × 6 + (4 − 1))
+Multi-Dimensional Arrays
+(1, 1)
+(3,4)
+array_addr +
+elem_size × ((3 − 1) × 6 + (4 − 1))
+(1, 1)
+(1, 2)
+(1, 3)
+(1, 4)
+(1, 5)
+(1, 6)
+(2, 1)
+.
+.
+.
+Row-major
+(1, 1)
+(2, 1)
+(3, 1)
+(1, 2)
+(2, 2)
+(3, 2)
+(1, 3)
+.
+.
+.
+Column-major
+(1, 1)
+(1, 2)
+(1, 3)
+(1, 4)
+(1, 5)
+(1, 6)
+(2, 1)
+.
+.
+.
+Row-major
+(1, 1)
+(2, 1)
+(3, 1)
+(1, 2)
+(2, 2)
+(3, 2)
+(1, 3)
+.
+.
+.
+Column-major
+(1, 1)
+(1, 2)
+(1, 3)
+(1, 4)
+(1, 5)
+(1, 6)
+(2, 1)
+.
+.
+.
+Row-major
+(1, 1)
+(2, 1)
+(3, 1)
+(1, 2)
+(2, 2)
+(3, 2)
+(1, 3)
+.
+.
+.
+Column-major
+(1, 1)
+(1, 2)
+(1, 3)
+(1, 4)
+(1, 5)
+(1, 6)
+(2, 1)
+.
+.
+.
+Row-major
+(1, 1)
+(2, 1)
+(3, 1)
+(1, 2)
+(2, 2)
+(3, 2)
+(1, 3)
+.
+.
+.
+Column-major
+Times for Common Operations
+Add Remove
+Beginning
+O(n) O(n)
+End
+O(1) O(1)
+Middle
+O(n) O(n)
+58 83 123 12 4
+Times for Common Operations
+Add Remove
+Beginning
+O(n) O(n)
+End
+O(1) O(1)
+Middle
+O(n) O(n)
+5 8 3 12
+58 83 123 12 4
+Times for Common Operations
+Add Remove
+Beginning
+O(n) O(n)
+End O(1)
+O(1)
+Middle
+O(n) O(n)
+5 8 3 12
+5 8 3 12 4
+58 83 123 12 4
+Times for Common Operations
+Add Remove
+Beginning
+O(n) O(n)
+End O(1)
+O(1)
+Middle
+O(n) O(n)
+5 8 3 12 4
+5 8 3 12 4
+58 83 123 12
+Times for Common Operations
+Add Remove
+Beginning
+O(n) O(n)
+End O(1) O(1)
+Middle
+O(n) O(n)
+5 8 3 12 4
+5 8 3 12
+8 83 123 12
+Times for Common Operations
+Add Remove
+Beginning
+O(n)
+O(n)
+End O(1) O(1)
+Middle
+O(n) O(n)
+5 8 3 12 4
+8 3 12
+8 3 123 12
+Times for Common Operations
+Add Remove
+Beginning
+O(n)
+O(n)
+End O(1) O(1)
+Middle
+O(n) O(n)
+5 8 3 12 4
+8 3 12
+8 3 12 12
+Times for Common Operations
+Add Remove
+Beginning
+O(n)
+O(n)
+End O(1) O(1)
+Middle
+O(n) O(n)
+58 8 3 12 4
+8 3 12
+8 3 12
+Times for Common Operations
+Add Remove
+Beginning
+O(n)
+O(n)
+End O(1) O(1)
+Middle
+O(n) O(n)
+58 83 3 12 4
+8 3 12
+Times for Common Operations
+Add Remove
+Beginning O(n) O(n)
+End O(1) O(1)
+Middle
+O(n) O(n)
+58 83 3 12 4
+8 3 12
+Times for Common Operations
+Add Remove
+Beginning O(n) O(n)
+End O(1) O(1)
+Middle O(n) O(n)
+58 83 3 12 4
+8 3 12
+Summary
+Array: contiguous area of memory
+consisting of equal-size elements indexed
+by contiguous integers.
+Constant-time access to any element.
+Constant time to add/remove at the
+end.
+Linear time to add/remove at an
+arbitrary location.
+Summary
+Array: contiguous area of memory
+consisting of equal-size elements indexed
+by contiguous integers.
+Constant-time access to any element.
+Constant time to add/remove at the
+end.
+Linear time to add/remove at an
+arbitrary location.
+Summary
+Array: contiguous area of memory
+consisting of equal-size elements indexed
+by contiguous integers.
+Constant-time access to any element.
+Constant time to add/remove at the
+end.
+Linear time to add/remove at an
+arbitrary location.
+Summary
+Array: contiguous area of memory
+consisting of equal-size elements indexed
+by contiguous integers.
+Constant-time access to any element.
+Constant time to add/remove at the
+end.
+Linear time to add/remove at an
+arbitrary location.
+Summary
+Array: contiguous area of memory
+consisting of equal-size elements indexed
+by contiguous integers.
+Constant-time access to any element.
+Constant time to add/remove at the
+end.
+Linear time to add/remove at an
+arbitrary location.
+Outline
+Singly-Linked List
+head
+7 10 4 13
+head
+7 10 4 13
+Node contains:
+key
+next pointer
+List API
+PushFront(Key) add to front
+Key TopFront() return front item
+PopFront() remove front item
+PushBack(Key) add to back
+Key TopBack() return back item
+PopBack() remove back item
+Boolean Find(Key) is key in list?
+Erase(Key) remove key from list
+Boolean Empty() empty list?
+AddBefore(Node, Key) adds key before node
+AddAfter(Node, Key) adds key after node
+List API
+PushFront(Key) add to front
+Key TopFront() return front item
+PopFront() remove front item
+PushBack(Key) add to back
+Key TopBack() return back item
+PopBack() remove back item
+Boolean Find(Key) is key in list?
+Erase(Key) remove key from list
+Boolean Empty() empty list?
+AddBefore(Node, Key) adds key before node
+AddAfter(Node, Key) adds key after node
+List API
+PushFront(Key) add to front
+Key TopFront() return front item
+PopFront() remove front item
+PushBack(Key) add to back
+Key TopBack() return back item
+PopBack() remove back item
+Boolean Find(Key) is key in list?
+Erase(Key) remove key from list
+Boolean Empty() empty list?
+AddBefore(Node, Key) adds key before node
+AddAfter(Node, Key) adds key after node
+List API
+PushFront(Key) add to front
+Key TopFront() return front item
+PopFront() remove front item
+PushBack(Key) add to back
+also known as Append
+Key TopBack() return back item
+PopBack() remove back item
+Boolean Find(Key) is key in list?
+Erase(Key) remove key from list
+Boolean Empty() empty list?
+AddBefore(Node, Key) adds key before node
+AddAfter(Node, Key) adds key after node
+List API
+PushFront(Key) add to front
+Key TopFront() return front item
+PopFront() remove front item
+PushBack(Key) add to back
+Key TopBack() return back item
+PopBack() remove back item
+Boolean Find(Key) is key in list?
+Erase(Key) remove key from list
+Boolean Empty() empty list?
+AddBefore(Node, Key) adds key before node
+AddAfter(Node, Key) adds key after node
+List API
+PushFront(Key) add to front
+Key TopFront() return front item
+PopFront() remove front item
+PushBack(Key) add to back
+Key TopBack() return back item
+PopBack() remove back item
+Boolean Find(Key) is key in list?
+Erase(Key) remove key from list
+Boolean Empty() empty list?
+AddBefore(Node, Key) adds key before node
+AddAfter(Node, Key) adds key after node
+List API
+PushFront(Key) add to front
+Key TopFront() return front item
+PopFront() remove front item
+PushBack(Key) add to back
+Key TopBack() return back item
+PopBack() remove back item
+Boolean Find(Key) is key in list?
+Erase(Key) remove key from list
+Boolean Empty() empty list?
+AddBefore(Node, Key) adds key before node
+AddAfter(Node, Key) adds key after node
+List API
+PushFront(Key) add to front
+Key TopFront() return front item
+PopFront() remove front item
+PushBack(Key) add to back
+Key TopBack() return back item
+PopBack() remove back item
+Boolean Find(Key) is key in list?
+Erase(Key) remove key from list
+Boolean Empty() empty list?
+AddBefore(Node, Key) adds key before node
+AddAfter(Node, Key) adds key after node
+List API
+PushFront(Key) add to front
+Key TopFront() return front item
+PopFront() remove front item
+PushBack(Key) add to back
+Key TopBack() return back item
+PopBack() remove back item
+Boolean Find(Key) is key in list?
+Erase(Key) remove key from list
+Boolean Empty() empty list?
+AddBefore(Node, Key) adds key before node
+AddAfter(Node, Key) adds key after node
+List API
+PushFront(Key) add to front
+Key TopFront() return front item
+PopFront() remove front item
+PushBack(Key) add to back
+Key TopBack() return back item
+PopBack() remove back item
+Boolean Find(Key) is key in list?
+Erase(Key) remove key from list
+Boolean Empty() empty list?
+AddBefore(Node, Key) adds key before node
+AddAfter(Node, Key) adds key after node
+List API
+PushFront(Key) add to front
+Key TopFront() return front item
+PopFront() remove front item
+PushBack(Key) add to back
+Key TopBack() return back item
+PopBack() remove back item
+Boolean Find(Key) is key in list?
+Erase(Key) remove key from list
+Boolean Empty() empty list?
+AddBefore(Node, Key) adds key before node
+AddAfter(Node, Key) adds key after node
+Times for Some Operations
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PushFront
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PushFront
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PushFront
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PushFront O(1)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PopFront
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PopFront
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PopFront O(1)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PushBack
+(no tail)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PushBack O(n)
+(no tail)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PopBack
+(no tail)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PopBack O(n)
+(no tail)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PushBack
+(with tail)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PushBack
+(with tail)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PushBack
+(with tail)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PushBack O(1)
+(with tail)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PopBack
+(with tail)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PopBack
+(with tail)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PopBack
+(with tail)
+head
+7 10 4 13
+26
+tail
+8
+Times for Some Operations
+PopBack O(n)
+(with tail)
+head
+7 10 4 13
+26
+tail
+8
+Singly-linked List
+PushFront(key)
+node ←new node
+node.key ← key
+node.next ← head
+head ← node
+if tail = nil:
+tail ← head
+Singly-linked List
+PopFront()
+if head = nil:
+ERROR: empty list
+head ← head.next
+if head = nil:
+tail ← nil
+Singly-linked List
+PushBack(key)
+node ←new node
+node.key ← key
+node.next =nil
+if tail = nil:
+head ← tail ← node
+else:
+tail.next ← node
+tail ← node
+Singly-linked List
+PushBack(key)
+node ←new node
+node.key ← key
+node.next =nil
+if tail = nil:
+head ← tail ← node
+else:
+tail.next ← node
+tail ← node
+Singly-linked List
+PushBack(key)
+node ←new node
+node.key ← key
+node.next =nil
+if tail = nil:
+head ← tail ← node
+else:
+tail.next ← node
+tail ← node
+Singly-linked List
+PopBack()
+if head = nil: ERROR: empty list
+if head = tail:
+head ← tail ←nil
+else:
+p ← head
+while p.next.next ̸= nil:
+p ← p.next
+p.next ← nil; tail ← p
+Singly-linked List
+PopBack()
+if head = nil: ERROR: empty list
+if head = tail:
+head ← tail ←nil
+else:
+p ← head
+while p.next.next ̸= nil:
+p ← p.next
+p.next ← nil; tail ← p
+Singly-linked List
+PopBack()
+if head = nil: ERROR: empty list
+if head = tail:
+head ← tail ←nil
+else:
+p ← head
+while p.next.next ̸= nil:
+p ← p.next
+p.next ← nil; tail ← p
+Singly-linked List
+PopBack()
+if head = nil: ERROR: empty list
+if head = tail:
+head ← tail ←nil
+else:
+p ← head
+while p.next.next ̸= nil:
+p ← p.next
+p.next ← nil; tail ← p
+Singly-linked List
+PopBack()
+if head = nil: ERROR: empty list
+if head = tail:
+head ← tail ←nil
+else:
+p ← head
+while p.next.next ̸= nil:
+p ← p.next
+p.next ← nil; tail ← p
+Singly-linked List
+AddAfter(node, key)
+node2 ←new node
+node2.key ← key
+node2.next = node.next
+node.next = node2
+if tail = node:
+tail ← node2
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Doubly-Linked List
+head tail 7 10 4 13
+Doubly-Linked List
+head tail 7 10 4 13
+head tail
+7 10 4 13
+Doubly-Linked List
+head tail
+7 10 4 13
+Node contains:
+key
+next pointer
+prev pointer
+Doubly-Linked List
+head tail
+7 10 4 13
+PopBack
+Doubly-Linked List
+head tail
+7 10 4 13
+PopBack
+Doubly-Linked List
+head tail
+7 10 4 13
+PopBack
+Doubly-Linked List
+head tail
+7 10 4
+13
+PopBack
+Doubly-Linked List
+head tail
+7 10 4
+13
+PopBack O(1)
+Doubly-linked List
+PushBack(key)
+node ←new node
+node.key ← key; node.next =nil
+if tail = nil:
+head ← tail ← node
+node.prev ←nil
+else:
+tail.next ← node
+node.prev ← tail
+tail ← node
+Doubly-linked List
+PushBack(key)
+node ←new node
+node.key ← key; node.next =nil
+if tail = nil:
+head ← tail ← node
+node.prev ←nil
+else:
+tail.next ← node
+node.prev ← tail
+tail ← node
+Doubly-linked List
+PushBack(key)
+node ←new node
+node.key ← key; node.next =nil
+if tail = nil:
+head ← tail ← node
+node.prev ←nil
+else:
+tail.next ← node
+node.prev ← tail
+tail ← node
+Doubly-linked List
+PopBack()
+if head = nil: ERROR: empty list
+if head = tail:
+head ← tail ←nil
+else:
+tail ← tail.prev
+tail.next ←nil
+Doubly-linked List
+PopBack()
+if head = nil: ERROR: empty list
+if head = tail:
+head ← tail ←nil
+else:
+tail ← tail.prev
+tail.next ←nil
+Doubly-linked List
+PopBack()
+if head = nil: ERROR: empty list
+if head = tail:
+head ← tail ←nil
+else:
+tail ← tail.prev
+tail.next ←nil
+Doubly-linked List
+PopBack()
+if head = nil: ERROR: empty list
+if head = tail:
+head ← tail ←nil
+else:
+tail ← tail.prev
+tail.next ←nil
+Doubly-linked List
+AddAfter(node, key)
+node2 ←new node
+node2.key ← key
+node2.next ← node.next
+node2.prev ← node
+node.next ← node2
+if node2.next ̸=nil:
+node2.next.prev ← node2
+if tail = node:
+tail ← node2
+Doubly-linked List
+AddBefore(node, key)
+node2 ←new node
+node2.key ← key
+node2.next ← node
+node2.prev ← node.prev
+node.prev ← node2
+if node2.prev ̸=nil:
+node2.prev.next ← node2
+if head = node:
+head ← node2
+Singly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n)
+AddAfter(Node, Key) O(1)
+Doubly-Linked List no tail with tail
+PushFront(Key) O(1)
+TopFront() O(1)
+PopFront() O(1)
+PushBack(Key) O(n) O(1)
+TopBack() O(n) O(1)
+PopBack() O(n) O(1)
+Find(Key) O(n)
+Erase(Key) O(n)
+Empty() O(1)
+AddBefore(Node, Key) O(n) O(1)
+AddAfter(Node, Key) O(1)
+Summary
+Constant time to insert at or remove
+from the front.
+With tail and doubly-linked, constant
+time to insert at or remove from the
+back.
+O(n) time to find arbitrary element.
+List elements need not be contiguous.
+With doubly-linked list, constant time to
+insert between nodes or remove a node.
+Summary
+Constant time to insert at or remove
+from the front.
+With tail and doubly-linked, constant
+time to insert at or remove from the
+back.
+O(n) time to find arbitrary element.
+List elements need not be contiguous.
+With doubly-linked list, constant time to
+insert between nodes or remove a node.
+Summary
+Constant time to insert at or remove
+from the front.
+With tail and doubly-linked, constant
+time to insert at or remove from the
+back.
+O(n) time to find arbitrary element.
+List elements need not be contiguous.
+With doubly-linked list, constant time to
+insert between nodes or remove a node.
+Summary
+Constant time to insert at or remove
+from the front.
+With tail and doubly-linked, constant
+time to insert at or remove from the
+back.
+O(n) time to find arbitrary element.
+List elements need not be contiguous.
+With doubly-linked list, constant time to
+insert between nodes or remove a node.
+Summary
+Constant time to insert at or remove
+from the front.
+With tail and doubly-linked, constant
+time to insert at or remove from the
+back.
+O(n) time to find arbitrary element.
+List elements need not be contiguous.
+With doubly-linked list, constant time to
+insert between nodes or remove a node.
